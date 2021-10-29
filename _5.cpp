@@ -1,7 +1,7 @@
 //Move all negative numbers to beginning and positive to end with constant extra space
 
-//Approach :- When you are getting any positiove number try to swa[ whatever the correct postion for that
-//Complexity :- Time Complexity :- O(N) and space Complexity:- O(N)
+//Approach :- When you are getting any positiove number try to swap whatever the correct postion for that
+//Complexity :- Time Complexity :- O(N) and space Complexity:- O(1)
 #include<bits/stdc++.h>
 using namespace std;
 void move(vector<int>& array)
