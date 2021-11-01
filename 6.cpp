@@ -23,7 +23,7 @@ class Solution{
     bool binery_search(int arr[] , int n , int element)
     {
         int l = 0 , r = n , mid = 0;
-        while( l  < r)
+        while( l < r)
         {
             mid = (l+r)/2;
             if(arr[mid] == element)
@@ -32,7 +32,7 @@ class Solution{
             }
             else if( arr[mid] > element)
             {
-                r = mid -1 ;
+                r = mid ;
             }
             else
             {
