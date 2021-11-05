@@ -1,4 +1,9 @@
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
 
+
+ // } Driver Code Ends
 
 // Given an array of integers. Find the Inversion Count in the array. 
 
@@ -38,22 +43,22 @@ class Solution{
     public:
     lli merge_sort(ll arr[] , int si , int ei)
     {
-        if(si > ei)
+        if(si < ei)
         {
-            return 0;
+    
+            lli count  = 0 ;
+            int mid = si+(ei-si)/2;
+            lli count_left=merge_sort(arr,si,mid);
+            lli count_right=merge_sort(arr,mid+1,ei);
+            count=merge(arr,si,mid,ei);
+            return count_left+count_right+count;
         }
-        lli count  = 0 ;
-        int mid = si +(ei-si)/2;
-        count+=merge_sort(arr,si,mid);
-        count+=merge_sort(arr,mid+1,ei);
-        count+=merge(arr,si,mid,ei);
-        return count;
         
     }
     lli merge(ll arr[] , int si , int mid , int ei)
     {
         lli count  = 0 ;
-        int i = 0 , j = mid , k = 0 ;
+        int i = si , j = mid , k = 0 ;
         ll temp[ei-si+1];
 
         while(i < mid and j <= ei)
@@ -90,7 +95,7 @@ class Solution{
     lli inversionCount(ll arr[], ll N)
     {
         // Your Code Here
-        lli count  = merge_sort(arr,0,N);
+        lli count = merge_sort(arr,0,int(N));
         return count;
     }
 
